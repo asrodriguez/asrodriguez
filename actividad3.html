@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figuras Geom&eacute;tricas</title>
+<!-- Styles -->
+<script src="./scripts/hammer.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/styles.css">
+<link rel="stylesheet" type="text/css" href="./css/siimple.css">
+
+<style>
+.slidecontainer {
+	width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+	-webkit-appearance: none; /* Override default CSS styles */
+	appearance: none;
+	width: 100%; /* Full-width */
+	height: 25px; /* Specified height */
+	background: #d3d3d3; /* Grey background */
+	outline: none; /* Remove outline */
+	opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+	-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+	transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+	opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+	-webkit-appearance: none; /* Override default look */
+	appearance: none;
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #4CAF50; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+	width: 25px; /* Set a specific slider handle width */
+	height: 25px; /* Slider handle height */
+	background: #4CAF50; /* Green background */
+	cursor: pointer; /* Cursor on hover */
+}
+</style>
+</head>
+<body>
+
+	<div class="siimple-box" align="center">
+		<div class="siimple-box-title">Aprendiendo colores y figuras</div>
+		<div class="siimple-box-subtitle">Actividades educativas para
+			ni&ntilde;os</div>
+
+	</div>
+
+	<div class="siimple-btn siimple-btn--primary"
+		onclick="window.location.href='index.html'">Actividad 1</div>
+	<div class="siimple-btn siimple-btn--error"
+		onclick="window.location.href='actividad2.html'">Actividad 2</div>
+	<div class="siimple-btn siimple-btn--warning"
+		onclick="window.location.href='actividad3.html'">Actividad 3</div>
+
+
+	<div class="siimple-h3">
+		Actividad 3 <img src="./images/help.png" id="ayuda" height="42"
+			width="42">
+	</div>
+	<div class="siimple-h5">Juego de figuras y posiciones.</div>
+
+
+	<div class="siimple-grid">
+
+		<!-- extremo derecho -->
+		<div class="siimple-grid-row" style="background-color: lightgreen">
+			<div class="siimple--text-center" style="margin-top: 10px">
+				Pociciona el cuadrado en el extremo derecho de la barra (100)</font>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="slidecontainer">
+					<input type="range" min="0" max="100" value="20" class="slider"
+						id="myRange">
+						<div id="demo"></div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<div class="siimple-btn siimple-btn--success"
+						style="margin-top: 10%" onclick="cuadradoDerecho();">Calificar</div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<img src="" style="display: none;" id="respuestaCuadrado"
+						style="margin-top: 10%" height="42" width="42">
+				</div>
+			</div>
+		</div>
+		
+		<!-- extremo izquierdo -->
+		<div class="siimple-grid-row" style="background-color: lightblue">
+			<div class="siimple--text-center" style="margin-top: 10px">
+				Pociciona el cuadrado en el extremo izquierdo de la barra (0)</font>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="slidecontainer">
+					<input type="range" min="0" max="100" value="80" class="slider"
+						id="rangoIzquierdo">
+						<div id="izquierdo"></div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<div class="siimple-btn siimple-btn--success"
+						style="margin-top: 10%" onclick="cuadradoIzquierdo();">Calificar</div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<img src="" style="display: none;" id="respuestaCuadradoIzquierdo"
+						style="margin-top: 10%" height="42" width="42">
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+	var slider = document.getElementById("myRange");
+	var output = document.getElementById("demo");
+	output.innerHTML = slider.value;
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+	    output.innerHTML = this.value;
+	    navigator.vibrate([this.value, 30]);
+	}
+	
+	function cuadradoDerecho() {
+		document.getElementById("respuestaCuadrado").style.display = "inline";
+		if (slider.value == 100) {
+			navigator.vibrate([ 50, 100, 50, 100, 50, 100, 400, 100, 300,
+				100, 350, 50, 200, 100, 100, 50, 600 ]);
+			document.getElementById("respuestaCuadrado").src = "./images/happy.png";
+		} else {
+			window.navigator.vibrate([ 100, 30, 100, 30, 100, 30 ]);
+			document.getElementById("respuestaCuadrado").src = "./images/sad.png";
+		}
+	}
+	
+	var sliderIzq = document.getElementById("rangoIzquierdo");
+	var outputIzq = document.getElementById("izquierdo");
+	outputIzq.innerHTML = sliderIzq.value;
+	// Update the current slider value (each time you drag the slider handle)
+	sliderIzq.oninput = function() {
+		outputIzq.innerHTML = this.value;
+	    navigator.vibrate([this.value, 30]);
+	}
+	
+	function cuadradoIzquierdo() {
+		document.getElementById("respuestaCuadradoIzquierdo").style.display = "inline";
+		if (sliderIzq.value == 0) {
+			navigator.vibrate([ 50, 100, 50, 100, 50, 100, 400, 100, 300,
+				100, 350, 50, 200, 100, 100, 50, 600 ]);
+			document.getElementById("respuestaCuadradoIzquierdo").src = "./images/happy.png";
+		} else {
+			window.navigator.vibrate([ 100, 30, 100, 30, 100, 30 ]);
+			document.getElementById("respuestaCuadradoIzquierdo").src = "./images/sad.png";
+		}
+	}
+
+
+		var myElement = document.getElementById('ayuda');
+
+		// create a simple instance
+		// by default, it only adds horizontal recognizers
+		var mc = new Hammer(myElement);
+
+		// listen to events...
+		mc.on("press", function(ev) {
+			window.navigator.vibrate([ 100, 30, 100, 30, 100, 30, 200, 30, 200,
+					30, 200, 30, 100, 30, 100, 30, 100 ]);
+			setTimeout(function() {
+				alert("Arrastra la figura hasta la posici\u00F3n deseada.");
+			}, 3500);
+
+		});
+		window.oncontextmenu = function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+		};
+	</script>
+</body>
+</html>
