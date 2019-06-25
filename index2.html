@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figuras Geom&eacute;tricas</title>
+<!-- Styles -->
+<script src="./scripts/hammer.js"></script>
+
+<link rel="stylesheet" type="text/css" href="./css/styles.css">
+<link rel="stylesheet" type="text/css" href="./css/siimple.css">
+
+<style>
+div#box {
+	height: 80px;
+	width: 80px;
+	left: 20%;
+	top: 20%;
+	background-color: white;
+}
+
+div#triangulo {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-bottom: 80px solid white;
+}
+
+div#circulo {
+	width: 100px;
+	height: 100px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	background: white;
+}
+</style>
+</head>
+<body>
+
+	<div class="siimple-box" align="center">
+		<div class="siimple-box-title">Aprendiendo colores y figuras</div>
+		<div class="siimple-box-subtitle">Actividades educativas para
+			ni&ntilde;os</div>
+
+	</div>
+
+	<div class="siimple-btn siimple-btn--primary"
+		onclick="window.location.href='index.html'">Actividad 1</div>
+	<div class="siimple-btn siimple-btn--error"
+		onclick="window.location.href='actividad2.html'">Actividad 2</div>
+	<div class="siimple-btn siimple-btn--warning"
+		onclick="window.location.href='actividad3.html'">Actividad 3</div>
+
+
+	<div class="siimple-h3">
+		Actividad 1 <img src="./images/help.png" id="ayuda" height="42"
+			width="42">
+	</div>
+	<div class="siimple-h5">Juego de colores y figuras.</div>
+
+
+	<div class="siimple-grid">
+		<!-- Cuadrado -->
+		<div class="siimple-grid-row" style="background-color: lightblue">
+			<div class="siimple--text-center" style="margin-top: 10px">
+				Cuadrado <font style="color: red"> Rojo </font>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example" id="box" onclick="cambiarCuadrado();"></div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<div class="siimple-btn siimple-btn--success"
+						style="margin-top: 10%" onclick="cuadradoRojo();">Calificar</div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<img src="" style="display: none;" id="respuestaCuadrado"
+						style="margin-top: 10%" height="42" width="42">
+				</div>
+			</div>
+		</div>
+		<!-- Triangulo -->
+		<div class="siimple-grid-row" style="background-color: lightgreen">
+			<div class="siimple--text-center" style="margin-top: 10px">
+				Tri&aacute;ngulo <font style="color: yellow"> Amarillo </font>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example" id="triangulo"
+					onclick="cambiarTriangulo();"></div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<div class="siimple-btn siimple-btn--success"
+						style="margin-top: 10%" onclick="trianguloAmarillo();">Calificar</div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<img src="" style="display: none;" id="respuestaTriangulo"
+						style="margin-top: 10%" height="42" width="42">
+				</div>
+			</div>
+		</div>
+
+		<!-- Circulo -->
+		<div class="siimple-grid-row" style="background-color: lightpink">
+			<div class="siimple--text-center" style="margin-top: 10px">
+				C&iacute;rculo <font style="color: green"> Verde </font>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example" id="circulo" onclick="cambiarCirculo();"></div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<div class="siimple-btn siimple-btn--success"
+						style="margin-top: 10%" onclick="circuloVerde();">Calificar</div>
+				</div>
+			</div>
+			<div class="siimple-grid-col siimple-grid-col--4 grid-col">
+				<div class="col-example">
+					<img src="" style="display: none;" id="respuestaCirculo"
+						style="margin-top: 10%" height="42" width="42">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		var colors = [ "blue", "green", "yellow", "red", "purple" ];
+		var indexCuadrado = -1;
+		var indexTriangulo = -1;
+		var indexCirculo = -1;
+
+		function cambiarCuadrado() {
+			indexCuadrado = (indexCuadrado + 1) % colors.length;
+			document.getElementById("box").style.backgroundColor = colors[indexCuadrado];
+			navigator.vibrate(50);
+		}
+		function cuadradoRojo() {
+			document.getElementById("respuestaCuadrado").style.display = "inline";
+			if (colors[indexCuadrado] == "red") {
+				navigator.vibrate([ 50, 100, 50, 100, 50, 100, 400, 100, 300,
+						100, 350, 50, 200, 100, 100, 50, 600 ]);
+				document.getElementById("respuestaCuadrado").src = "./images/happy.png";
+			} else {
+				window.navigator.vibrate([ 100, 30, 100, 30, 100, 30 ]);
+				document.getElementById("respuestaCuadrado").src = "./images/sad.png";
+			}
+		}
+
+		function cambiarTriangulo() {
+			indexTriangulo = (indexTriangulo + 1) % colors.length;
+			document.getElementById("triangulo").style.borderBottomColor = colors[indexTriangulo];
+			navigator.vibrate(50);
+		}
+		function trianguloAmarillo() {
+			document.getElementById("respuestaTriangulo").style.display = "inline";
+			if (colors[indexTriangulo] == "yellow") {
+				navigator.vibrate([ 50, 100, 50, 100, 50, 100, 400, 100, 300,
+						100, 350, 50, 200, 100, 100, 50, 600 ]);
+				document.getElementById("respuestaTriangulo").src = "./images/happy.png";
+			} else {
+				window.navigator.vibrate([ 100, 30, 100, 30, 100, 30 ]);
+				document.getElementById("respuestaTriangulo").src = "./images/sad.png";
+			}
+		}
+
+		function cambiarCirculo() {
+			indexCirculo = (indexCirculo + 1) % colors.length;
+			document.getElementById("circulo").style.backgroundColor = colors[indexCirculo];
+			navigator.vibrate(50);
+		}
+		function circuloVerde() {
+			document.getElementById("respuestaCirculo").style.display = "inline";
+			if (colors[indexCirculo] == "green") {
+				navigator.vibrate([ 50, 100, 50, 100, 50, 100, 400, 100, 300,
+						100, 350, 50, 200, 100, 100, 50, 600 ]);
+				document.getElementById("respuestaCirculo").src = "./images/happy.png";
+			} else {
+				window.navigator.vibrate([ 100, 30, 100, 30, 100, 30 ]);
+				document.getElementById("respuestaCirculo").src = "./images/sad.png";
+			}
+		}
+
+		var myElement = document.getElementById('ayuda');
+
+		// create a simple instance
+		// by default, it only adds horizontal recognizers
+		var mc = new Hammer(myElement);
+
+		// listen to events...
+		mc.on("press", function(ev) {
+			window.navigator.vibrate([ 100, 30, 100, 30, 100, 30, 200, 30, 200,
+					30, 200, 30, 100, 30, 100, 30, 100 ]);
+			setTimeout(function() {
+				alert("Toca la figura para que cambie de color.");
+			}, 3500);
+
+		});
+		window.oncontextmenu = function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			return false;
+		};
+	</script>
+</body>
+</html>
