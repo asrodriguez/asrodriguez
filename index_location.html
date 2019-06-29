@@ -18,7 +18,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Introducci&oacute;n al dise&ntilde;o de interacciones h&aacute;pticas <small>2016</small></h1>
+      <h1>Introduccio&oacute;n al diseño de interacciones h&aacute;pticas <small>2016</small></h1>
       <h4>TP 2 - &Iacute;conos T&aacute;ctiles</h4>
       <h2>Opci&oacute;n 1 <strong>Navegaci&oacute;n</strong></h2>
       <button class="btn btn-lg btn-info" onclick="lejos()">Lejos</button> 
@@ -26,12 +26,15 @@
       <button class="btn btn-lg btn-warning" onclick="cerca()">Cerca</button> 
       <button class="btn btn-lg btn-danger" onclick="destino()">Destino</button> 
 
-      <h2>Opci&oacute;n 2 <strong>Emociones</strong></h2>
+      <h2>&Iacute;conos Indicadores de Distancia</h2>
       <button class="btn btn-lg btn-default" onclick="estresado()"><i class="fa fa-heartbeat" aria-hidden="true"></i> Estresado</button>
       <button class="btn btn-lg btn-default" onclick="excitado()"><i class="fa fa-bolt" aria-hidden="true"></i> Excitado</button> 
       <button class="btn btn-lg btn-default" onclick="deprimido()"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Deprimido</button> 
       <button class="btn btn-lg btn-default" onclick="relajado()"><i class="fa fa-envira" aria-hidden="true"></i> Relajado</button> 
 
+<!-- 
+      <p><button class="btn btn-lg btn-default" onclick="locate()">Locate</button></button></p>
+      <div id="out"></div> -->
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -45,7 +48,7 @@
     		Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
     	}
     	function medio(){
-    		Haptics.vibrate([50, 120, 50, 160, 50, 200, 50]);
+    		Haptics.vibrate([50, 100, 50, 150, 50, 200, 50]);
     	}
     	function cerca(){
     		Haptics.vibrate([50, 50, 50, 75, 50, 100, 50]);
@@ -54,17 +57,49 @@
     		Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
     	}
     	function estresado(){
-        Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
+    		Haptics.vibrate([100, 20, 20, 20, 100, 20, 20, 20, 100, 20, 20, 20, 100, 20, 20, 20]);
     	}
-    	function excitado(){
-    		Haptics.vibrate([20, 50, 20, 40, 20, 30, 20, 20, 20, 10, 400 ]);
+    	function lejos(){
+    		Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
     	}
-    	function deprimido(){
-        Haptics.vibrate([200, 100, 120, 200, 100, 300, 80, 400, 50]);
+    	function lejos(){
+    		Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
     	}
-    	function relajado(){
-        Haptics.vibrate([20, 200, 20, 180, 20, 150, 20, 100, 20, 80, 20, 50, 20, 80, 20, 100, 20, 150, 20, 180,20, 200, 20, 400, 20, 400, 20, 400, 20 ]);
+    	function lejos(){
+    		Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
     	}
+
+  //   	function distance(lat1, lon1, lat2, lon2) {
+		//   var R = 6371; // Radius of the earth in km
+		//   var dLat = (lat2-lat1).toRad();  // Javascript functions in radians
+		//   var dLon = (lon2-lon1).toRad(); 
+		//   var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+		//           Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) * 
+		//           Math.sin(dLon/2) * Math.sin(dLon/2); 
+		//   var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+		//   var d = R * c; // Distance in km
+		//   return d;
+		// }
+
+		// /** Converts numeric degrees to radians */
+		// if (typeof(Number.prototype.toRad) === "undefined") {
+		//   Number.prototype.toRad = function() {
+		//     return this * Math.PI / 180;
+		//   }
+		// }
+
+		// window.navigator.geolocation.getCurrentPosition(function(pos) {
+		//   console.log(pos); 
+		//   console.log(distance(pos.coords.latitude, pos.coords.longitude, 71.03, 42.37)); 
+		//   console.log(distance(pos.coords.latitude, pos.coords.longitude, -34.60, -58.38)); 
+		//   console.log(pos.coords.longitude +", "+ pos.coords.latitude);
+		// });
+
+		// function locate(){
+		// window.navigator.geolocation.getCurrentPosition(function(pos) {
+		// 	$('#out').append("<p>"+pos.coords.longitude +", "+ pos.coords.latitude+"</p>")
+		// });
+		// }
 
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
