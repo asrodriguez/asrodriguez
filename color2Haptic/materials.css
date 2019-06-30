@@ -1,0 +1,23 @@
+#flash{
+	position: fixed;
+	display: block;
+	border-radius: 50%;
+	background-color: red;
+	width: 20px;
+	height: 20px;
+	top:100px;
+	display: none;
+}
+
+.well{min-height: 200px}
+
+#mousespeed_bar{
+	display: block;
+	border-radius: 5%;
+	background-color: red;
+	padding-left: 20px;
+	height: 30px;
+	width:0px;
+	font-weight: bold;
+	color: white;
+}
