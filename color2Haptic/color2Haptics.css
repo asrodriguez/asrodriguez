@@ -11,12 +11,12 @@
 
 .well{
 	min-height: 200px;
-	background-color: hsl(120, 100, 100)
+	background-color: hsl(120, 100, 100);
 }
 
 .gray{
 	min-height: 200px;
-	background-color: hsl(120, 0, 50)
+	background-color: hsl(120, 0, 50);
 }
 
 #mousespeed_bar{
