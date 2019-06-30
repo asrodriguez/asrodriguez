@@ -34,10 +34,10 @@ function writeMouseSpeedDemo() {
     if (reactToTouch) {
         // Setting for Touch Devices
 
-        $('[data-surface="soft"]').bind('touchstart',function(e){intensity=10; opacity=0.2})
-        $('[data-surface="medium"]').bind('touchstart',function(e){intensity=14; opacity=0.3})
-        $('[data-surface="hard"]').bind('touchstart',function(e){intensity=20; opacity=0.6})
-        $('[data-surface="harder"]').bind('touchstart',function(e){intensity=50; opacity=1})
+        $('[data-surface="soft"]').bind('touchstart',function(e){intensity=100; opacity=0.2})
+        $('[data-surface="medium"]').bind('touchstart',function(e){intensity=140; opacity=0.3})
+        $('[data-surface="hard"]').bind('touchstart',function(e){intensity=200; opacity=0.6})
+        $('[data-surface="harder"]').bind('touchstart',function(e){intensity=500; opacity=1})
 
         $('[data-surface]').bind('touchmove',function(e){
           e.preventDefault();
