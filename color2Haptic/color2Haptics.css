@@ -15,9 +15,13 @@
     border:1px;
 }
 
-.gray{
+.saturation{
 	min-height: 200px;
-	background-color: HSL(120, 0%, 50%);
+	background-color: HSL(120, 80%, 100%);
+}
+.lightness{
+	min-height: 200px;
+	background-color: HSL(120, 1000%, 50%);
 }
 
 #mousespeed_bar{
