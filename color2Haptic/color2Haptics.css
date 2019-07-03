@@ -12,18 +12,24 @@
 .hue{
 	min-height: 100px;
 	background-color: HSL(120, 100%, 100%);
-   	border:1px;
+	   border-style: solid;
+	   border-width:1px; 
+	   border-color: black;
 }
 
 .saturation{
 	min-height: 100px;
 	background-color: HSL(120, 50%, 100%);
-	border:1px;
+	border-style: solid;
+	   border-width:1px; 
+	   border-color: black;
 }
 .lightness{
 	min-height: 100px;
 	background-color: HSL(120, 100%, 50%);
-	border: 1px;
+	border-style: solid;
+	   border-width:1px; 
+	   border-color: black;
 }
 
 #mousespeed_bar{
