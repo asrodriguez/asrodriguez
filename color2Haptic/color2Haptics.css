@@ -10,18 +10,18 @@
 }
 
 .hue{
-	min-height: 200px;
-	background-color: HSL(240, 100%, 100%);
+	min-height: 100px;
+	background-color: HSL(120, 100%, 100%);
    	border:1px;
 }
 
 .saturation{
-	min-height: 200px;
+	min-height: 100px;
 	background-color: HSL(120, 50%, 100%);
 	border:1px;
 }
 .lightness{
-	min-height: 200px;
+	min-height: 100px;
 	background-color: HSL(120, 100%, 50%);
 	border: 1px;
 }
