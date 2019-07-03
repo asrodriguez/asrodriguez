@@ -9,14 +9,15 @@
 	display: none;
 }
 
-.well{
+.hue{
 	min-height: 200px;
-	background-color: hsl(240, 100, 100);
+	background-color: HSL(240, 100%, 100%);
+    border:1px;
 }
 
 .gray{
 	min-height: 200px;
-	background-color: hsl(120, 0, 50);
+	background-color: HSL(120, 0%, 50%);
 }
 
 #mousespeed_bar{
