@@ -24,6 +24,7 @@
 	   border-width:1px; 
 	   border-color: black;
 }
+
 .lightness{
 	min-height: 100px;
 	background-color: HSL(120, 100%, 50%);
