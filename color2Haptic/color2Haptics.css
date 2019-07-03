@@ -19,7 +19,7 @@
 
 .hapticSaturation{
 	min-height: 100px;
-	background-color: HSL(120, 100%, 50%);
+	background-color: HSL(120, 80%, 100%);
 	border-style: solid;
 	   border-width:1px; 
 	   border-color: black;
