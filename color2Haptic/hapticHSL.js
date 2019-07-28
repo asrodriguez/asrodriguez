@@ -1,4 +1,7 @@
 
+// https://css-tricks.com/hsl-hsla-is-great-for-programmatic-color-control/
+
+
 var blinkSpeed=0;
 var blinked = true;
 var intensity = 10;
