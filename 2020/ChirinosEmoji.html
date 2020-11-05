@@ -22,7 +22,7 @@
     <div class="container">
         <h2>H&aacute;pticas 2020</h2>
         <h2><strong>Chirinos  - Emojis</strong></h2>
-        <p><img src="./images/beating-heart_1f493.png" alt="Beating heart"> <button class="btn btn-lg btn-info" onclick="lejos()">Beating heart</button> </p>
+        <p><img src="./images/beating-heart_1f493.png" alt="Beating heart"> <button class="btn btn-lg btn-info" onclick="beating()">Beating heart</button> </p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,36 +32,8 @@
     <!-- Haptic JS -->
     <script type="text/javascript" src="haptics.js"></script>
     <script type="text/javascript">
-        function lejos() {
-            Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
-        }
-
-        function medio() {
-            Haptics.vibrate([50, 120, 50, 160, 50, 200, 50]);
-        }
-
-        function cerca() {
-            Haptics.vibrate([50, 50, 50, 75, 50, 100, 50]);
-        }
-
-        function destino() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
-        }
-
-        function estresado() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
-        }
-
-        function excitado() {
-            Haptics.vibrate([20, 50, 20, 40, 20, 30, 20, 20, 20, 10, 400]);
-        }
-
-        function deprimido() {
-            Haptics.vibrate([200, 100, 120, 200, 100, 300, 80, 400, 50]);
-        }
-
-        function relajado() {
-            Haptics.vibrate([20, 200, 20, 180, 20, 150, 20, 100, 20, 80, 20, 50, 20, 80, 20, 100, 20, 150, 20, 180, 20, 200, 20, 400, 20, 400, 20, 400, 20]);
+        function beating() {
+            navigator.vibrate([107, 126, 96, 724, 101, 143, 81, 635, 117, 149, 111, 588, 106, 133, 84, 756, 91, 87, 84, 712, 97, 97, 67]);
         }
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>

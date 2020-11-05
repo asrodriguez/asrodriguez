@@ -22,7 +22,7 @@
     <div class="container">
         <h2>H&aacute;pticas 2020</h2>
         <h2><strong>Espin  - Emojis</strong></h2>
-        <p><img src="./images/cold-face_1f976.png" alt="Cold face"> <button class="btn btn-lg btn-info" onclick="lejos()">Cold face</button> </p>
+        <p><img src="./images/cold-face_1f976.png" alt="Cold face"> <button class="btn btn-lg btn-info" onclick="cold()">Cold face</button> </p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -32,36 +32,8 @@
     <!-- Haptic JS -->
     <script type="text/javascript" src="haptics.js"></script>
     <script type="text/javascript">
-        function lejos() {
-            Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
-        }
-
-        function medio() {
-            Haptics.vibrate([50, 120, 50, 160, 50, 200, 50]);
-        }
-
-        function cerca() {
-            Haptics.vibrate([50, 50, 50, 75, 50, 100, 50]);
-        }
-
-        function destino() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
-        }
-
-        function estresado() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
-        }
-
-        function excitado() {
-            Haptics.vibrate([20, 50, 20, 40, 20, 30, 20, 20, 20, 10, 400]);
-        }
-
-        function deprimido() {
-            Haptics.vibrate([200, 100, 120, 200, 100, 300, 80, 400, 50]);
-        }
-
-        function relajado() {
-            Haptics.vibrate([20, 200, 20, 180, 20, 150, 20, 100, 20, 80, 20, 50, 20, 80, 20, 100, 20, 150, 20, 180, 20, 200, 20, 400, 20, 400, 20, 400, 20]);
+        function cold() {
+            navigator.vibrate([63, 138, 71, 120, 80, 504, 443, 635, 89, 141, 72, 138, 66, 602, 656, 694, 70, 140, 69, 126, 77, 578, 482]);
         }
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
