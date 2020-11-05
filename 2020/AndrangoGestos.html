@@ -33,14 +33,13 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Haptic JS -->
     <script type="text/javascript" src="haptics.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
     <script type="text/javascript">
-        function party() {
-            navigator.vibrate([44, 213, 57, 126, 58, 408, 41, 434, 55, 351, 50, 652, 59, 205, 62, 168, 69, 368, 63, 372, 79, 361, 30]);
-        }
-
-        function wedding() {
-            navigator.vibrate([67, 399, 46, 334, 50, 105, 64, 601, 45, 418, 51, 374, 44, 76, 63]);
-        }
+        var myElement = document.getElementById('imagen');
+        var mc = new Hammer.Manager(myElement);
+        mc.on("press", function(ev) {
+            navigator.vibrate([334, 447, 146]);
+        })
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
 </body>
