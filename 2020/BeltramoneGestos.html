@@ -53,7 +53,7 @@
         // we only want to trigger a tap, when we don't have detected a doubletap
         mc.get('singletap').requireFailure('doubletap');
         mc.on("singletap doubletap", function(ev) {
-            myElement.textContent += ev.type + " ";
+            navigator.vibrate(500);
         });
     </script>
 
