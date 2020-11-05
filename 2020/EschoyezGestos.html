@@ -22,7 +22,7 @@
     <div class="container">
         <h2>H&aacute;pticas 2020</h2>
         <h2><strong>Eschoyez - Gestos</strong></h2>
-        <p><img src="./images/baseGestos.jpg" alt=""></p>
+        <p><img src="./images/baseGestos.jpg" alt="" id="imagen"></p>
         <p>Pinch</p>
         <p>Spread</p>
     </div>
@@ -33,14 +33,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Haptic JS -->
     <script type="text/javascript" src="haptics.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
     <script type="text/javascript">
-        function sneezing() {
-            navigator.vibrate([52, 375, 51, 577, 29, 828, 1159]);
-        }
+        var myElement = document.getElementById('imagen');
+        var mc = new Hammer.Manager(myElement);
+        mc.on("press", function(ev) {
+                    navigator.vibrate([334, 447, 146]);
+                    mc.on("pinch", function(ev) {
+                        navigator.vibrate([436, 506, 47, 74, 60, 61, 57, 37, 77, 44, 65, 61, 65, 51, 72, 102, 44]);
 
-        function crying() {
-            navigator.vibrate([531, 425, 120, 400, 64, 416, 566, 404, 101, 426, 38, 533, 46, 560, 38, 699, 48]);
-        }
+                    })
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
 </body>
