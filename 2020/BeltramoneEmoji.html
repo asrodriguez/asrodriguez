@@ -22,9 +22,11 @@
     <div class="container">
         <h2>H&aacute;pticas 2020</h2>
         <h2><strong>Beltramone - Emojis</strong></h2>
-        <p><img src="./images/red-heart_2764.png" alt="Red heart"> <button class="btn btn-lg btn-info" onclick="lejos()">Red heart</button> </p>
-        <p><img src="./images/face-with-tears-of-joy_1f602.png" alt="Face width tears of joy"> <button class="btn btn-lg btn-info" onclick="lejos()">Face width tears of joy</button> </p>
-        <p><img src="./images/astonished-face_1f632.png" alt="Astonished face"> <button class="btn btn-lg btn-info" onclick="lejos()">Astonished face</button> </p>
+        <p><img src="./images/red-heart_2764.png" alt="Red heart"> <button class="btn btn-lg btn-info" onclick="heart()">Red heart</button> </p>
+        <p><img src="./images/face-with-tears-of-joy_1f602.png" alt="Face width tears of joy"> <button class="btn btn-lg btn-info" onclick="joy()">Face width tears of joy</button> </p>
+        <p><img src="./images/astonished-face_1f632.png" alt="Astonished face"> <button class="btn btn-lg btn-info" onclick="astonish()">Astonished face</button> </p>
+        <p><img src="./images/dog-face_1f436.png" alt="Dog face"> <button class="btn btn-lg btn-info" onclick="dog()">Dog face</button> </p>
+        <p><img src="./images/rooster_1f413.png" alt="Rooster"> <button class="btn btn-lg btn-info" onclick="rooster()">Rooster</button> </p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -34,36 +36,24 @@
     <!-- Haptic JS -->
     <script type="text/javascript" src="haptics.js"></script>
     <script type="text/javascript">
-        function lejos() {
-            Haptics.vibrate([50, 200, 50, 300, 50, 400, 50]);
+        function heart() {
+            navigator.vibrate([0, 81, 207, 114, 757, 74, 203, 122, 632, 80, 190, 123, 610, 59, 239, 88]);
         }
 
-        function medio() {
-            Haptics.vibrate([50, 120, 50, 160, 50, 200, 50]);
+        function joy() {
+            navigator.vibrate([0, 68, 117, 105, 78, 100, 122, 99, 114, 105, 124, 93, 114, 108, 131, 116, 122, 101, 131, 125, 135, 100, 134, 1
+                13, 116, 95, 126, 105, 132, 91, 179, 93
+            ]);
         }
 
-        function cerca() {
-            Haptics.vibrate([50, 50, 50, 75, 50, 100, 50]);
+        function astonish() {
+            navigator.vibrate([0, 3172]);
         }
-
-        function destino() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
+        funciton dog() {
+            navigator.vibrate([0, 367, 437, 283, 544, 124, 144, 156]);
         }
-
-        function estresado() {
-            Haptics.vibrate([300, 50, 300, 50, 300, 50, 300, 50, 300, 50]);
-        }
-
-        function excitado() {
-            Haptics.vibrate([20, 50, 20, 40, 20, 30, 20, 20, 20, 10, 400]);
-        }
-
-        function deprimido() {
-            Haptics.vibrate([200, 100, 120, 200, 100, 300, 80, 400, 50]);
-        }
-
-        function relajado() {
-            Haptics.vibrate([20, 200, 20, 180, 20, 150, 20, 100, 20, 80, 20, 50, 20, 80, 20, 100, 20, 150, 20, 180, 20, 200, 20, 400, 20, 400, 20, 400, 20]);
+        funciton rooster() {
+            navigator.vibrate([0, 135, 257, 87, 81, 129, 259, 1089, 603, 124, 269, 103, 80, 124, 231, 1142]);
         }
     </script>
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
