@@ -16,13 +16,14 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
 </head>
 
 <body>
     <div class="container">
         <h2>H&aacute;pticas 2020</h2>
         <h2><strong>Balmaceda - Gestos</strong></h2>
-        <p><img src="./images/tomato_1f345.png" alt=""></p>
+        <p><img src="./images/tomato_1f345.png" alt="" id="imagen"></p>
         <p></p>
         <p></p>
     </div>
@@ -32,12 +33,29 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- Haptic JS -->
-    <script type="text/javascript" src="haptics.js"></script>
+
     <script type="text/javascript">
         function lejos() {
             navigator.vibrate([50, 200, 50, 300, 50, 400, 50]);
         }
     </script>
+    <script type="text/javascript">
+        var myElement = document.getElementById('imagen');
+        var mc = new Hammer.Manager(myElement);
+        // create a pinch and rotate recognizer
+        // these require 2 pointers
+        var pinch = new Hammer.Pinch();
+        var rotate = new Hammer.Rotate();
+        // we want to detect both the same time
+        pinch.recognizeWith(rotate);
+        // add to the Manager
+        mc.add([pinch, rotate]);
+        mc.on("pinch rotate", function(ev) {
+            navigator.vibrate([50, 200, 50, 300, 50, 400, 50]);
+        });
+    </script>
+
+
     <script src="https://use.fontawesome.com/458e4ab1d3.js"></script>
 </body>
 
