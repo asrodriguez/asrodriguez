@@ -51,7 +51,7 @@
         // add to the Manager
         mc.add([pinch, rotate]);
         mc.on("pinch rotate", function(ev) {
-            console.log("gesto detectado");
+            navigator.vibrate(500);
         });
     </script>
 
